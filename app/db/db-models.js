@@ -8,3 +8,7 @@ export const UserSchema = new mongoose.Schema(
   },
   { versionKey: false }
 );
+
+export const TestSchema = new mongoose.Schema({});
+
+export const SoalSchema = new mongoose.Schema({});

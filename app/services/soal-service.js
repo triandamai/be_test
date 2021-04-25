@@ -1,4 +1,4 @@
-export const createService = ({ model }) => {
+export const createSoalService = ({ model }) => {
   return {
     listAll() {
       return model.find();

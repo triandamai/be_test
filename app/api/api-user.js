@@ -1,8 +1,8 @@
-import { createService } from "../services/user-service.js";
+import { createUserService } from "../services/user-service.js";
 export default async instance => {
   const { User } = instance;
   instance.register(async instance => {
-    instance.decorate("User", createService({ model: User }));
+    instance.decorate("User", createUserService({ model: User }));
     instance.register(routesPlugin);
   });
 };
