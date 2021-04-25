@@ -1,0 +1,25 @@
+{
+  "name": "be_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "dependencies": {
+    "fastify": "^3.15.0",
+    "fastify-sensible": "~3.1.1",
+    "mongoose": "~5.12.3",
+    "slug": "~4.0.3"
+  },
+  "devDependencies": {
+    "fastify-plugin": "^3.0.0",
+    "nodemon": "^2.0.7",
+    "pta": "^0.2.3",
+    "sbuts": "^0.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
