@@ -1,0 +1,55 @@
+login
+register
+
+crud test
+crud soal
+
+resulttest
+
+
+
+
+
+user
+	uid
+	auth_method
+	email
+	name
+	identity
+	identity_type
+	username
+	password
+	role
+
+test
+	uid
+	name
+	code
+	thumnail
+	description
+	tags
+
+soal
+	uid
+	question
+	mime_type
+	mime
+	answer
+	answer_a
+		type
+		body
+	answer_b
+		type
+		body
+	answer_c
+		type
+		body
+	answer_d
+		type
+		body
+result
+	uid
+	user_uid
+	test_uid
+	result
+	

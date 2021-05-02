@@ -1,7 +1,12 @@
 import fp from "fastify-plugin";
 import mongoose from "mongoose";
 
-import { SoalSchema, TestSchema, UserSchema } from "./db-models.js";
+import {
+  QuestionSchema,
+  ResultSchema,
+  TestSchema,
+  UserSchema
+} from "./db-models.js";
 
 export const createDBPlugin = ({ db = mongoose } = {}) =>
   fp(async (instance, opts) => {
@@ -9,6 +14,7 @@ export const createDBPlugin = ({ db = mongoose } = {}) =>
     instance
       .decorate("User", db.model("User", UserSchema))
       .decorate("Test", db.model("Test", TestSchema))
-      .decorate("Soal", db.model("Soal", SoalSchema))
+      .decorate("Question", db.model("Question", QuestionSchema))
+      .decorate("Reult", db.model("Result", ResultSchema))
       .addHook("onClose", () => db.close());
   });

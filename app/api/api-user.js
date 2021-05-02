@@ -1,4 +1,5 @@
 import { createUserService } from "../services/user-service.js";
+import { loginSchema } from "../config.js";
 export default async instance => {
   const { User } = instance;
   instance.register(async instance => {
@@ -19,12 +20,17 @@ export const routesPlugin = async instance => {
   /**
    * login
    */
-  instance.post("/login", async (req, reply) => {
-    const { username, password } = req.body;
-    const user = await User.login({ username: username, password: password });
-    if (user.length < 1) return { statusCode: 400, data: user };
-    return { statusCode: 200, data: user };
-  });
+  instance.post(
+    "/login",
+    { loginSchema, attachValidation: true },
+    async (req, reply) => {
+      // const { username, password } = req.body;
+      // const user = await User.login({ username: username, password: password });
+      // if (user.length < 1) return { statusCode: 400, data: user };
+
+      return { data: req.validationError };
+    }
+  );
   /**
    * insert
    */
